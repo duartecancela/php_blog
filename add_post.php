@@ -13,31 +13,22 @@
         <label>Blog Content</label><br>
         <input type="text" name="content"><br>
         <label for="categories">Categories</label><br>
-        <select name="categories" id="categories">
+            <?php
+                require_once __DIR__ . '/DbClass.php';
+                $dbConnection = new DbClass();
+                $con = $dbConnection->connect();
+                $sql = "SELECT * FROM categories";
+                $statement = $con->query($sql);
+                $data = $statement->fetchAll(PDO::FETCH_ASSOC);
+                echo '<select name="categories" id="categories">';
 
-            <option value="Science">Science</option>
-            <option value="Electronics">Electronics</option>
-            <option value="Programing">Programing</option>
-            <option value="Music">Music</option>
+                foreach ($con->query($sql) as $row) {
+                    echo $row["name"] . '<br>';
+                    echo "<option value=" . $row["id"] . ">" . $row["name"]. "</option>";
+                }
+            ?>
         </select>
         <input type="submit">
     </form>
-    <?php
-    require_once __DIR__ . '/DbClass.php';
-    $dbConnection = new DbClass();
-    $con = $dbConnection->connect();
-    $sql = "SELECT * FROM categories";
-    $statement = $con->query($sql);
-    $data = $statement->fetchAll(PDO::FETCH_ASSOC);
-    print_r($data);
-    if ($con->query($sql)) {
-        echo "Connected: " . "<br>";
-        print_r($con->query($sql));
-    } else {
-        echo "Error: " . $sql . "<br>" . $con->errorCode();
-    }
-
-
-    ?>
 </body>
 </html>

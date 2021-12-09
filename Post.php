@@ -6,20 +6,20 @@ class Post
     private $date;
     private $title;
     private $content;
-    private $category;
+    private $category_id;
 
     /**
      * @param null $date
      * @param string $title
      * @param string $content
-     * @param string $category
+     * @param string $category_id
      */
-    public function __construct($date, $title, $content, $category)
+    public function __construct($date, $title, $content, $category_id)
     {
         $this->date = $date;
         $this->title = $title;
         $this->content = $content;
-        $this->category = $category;
+        $this->category_id = $category_id;
     }
 
 
@@ -74,17 +74,17 @@ class Post
     /**
      * @return string
      */
-    public function getCategory()
+    public function getCategoryId()
     {
-        return $this->category;
+        return $this->category_id;
     }
 
     /**
-     * @param string $category
+     * @param string $category_id
      */
-    public function setCategory($category)
+    public function setCategoryId($category_id)
     {
-        $this->category = $category;
+        $this->category_id = $category_id;
     }
 
 }

@@ -13,10 +13,10 @@ class PostModel
         $date = $post->getDate();
         $title = $post->getTitle();
         $content = $post->getContent();
-        $category = $post->getCategory();
+        $category_id = $post->getCategoryId();
 
         $conn = $this->connect();
-        $sql = "INSERT INTO posts(date, title, content, category) VALUES ('$date', '$title', '$content', '$category')";
+        $sql = "INSERT INTO posts(date, title, content, category_id) VALUES ('$date', '$title', '$content', '$category_id')";
 
         // insert data in database
         if ($conn->query($sql)) {
