@@ -27,4 +27,12 @@ class PostModel
         }
     }
 
+    public function index()
+    {
+        $con = $this->connect();
+        $sql = "SELECT * FROM posts";
+
+        return $con->query($sql);
+    }
+
 }

@@ -10,3 +10,8 @@ if($_POST['act'] == 'create_post')
     $postModel->createPost($post);
 
 }
+
+if($_POST['act'] == 'show_posts')
+{
+    echo "<h1>All Posts</h1>";
+}
