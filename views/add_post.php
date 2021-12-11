@@ -6,7 +6,7 @@
 </head>
 <body>
     <h1>Create Post</h1>
-    <form name="create_form" action="blogController.php" method="post">
+    <form name="create_form" action="../controllers/blogController.php" method="post">
         <input type="hidden" name="act" value="create_post"/>
         <label>Blog Title</label><br>
         <input type="text" name="title"><br>
@@ -14,7 +14,7 @@
         <input type="text" name="content"><br>
         <label for="categories">Categories</label><br>
             <?php
-                require_once __DIR__ . '/DbClass.php';
+                require_once __DIR__ . '..\..\models\DbClass.php';
                 $dbConnection = new DbClass();
                 $con = $dbConnection->connect();
                 $sql = "SELECT * FROM categories";
@@ -30,5 +30,6 @@
         </select>
         <input type="submit">
     </form>
+    <a href="..\index.php">Home</a>
 </body>
 </html>

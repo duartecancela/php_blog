@@ -1,7 +1,7 @@
 <?php
 
-include("Post.php");
-include("PostModel.php");
+include("..\classes\Post.php");
+include("..\models\PostModel.php");
 
 if($_POST['act'] == 'create_post')
 {

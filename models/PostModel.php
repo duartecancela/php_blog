@@ -22,6 +22,7 @@ class PostModel
         if ($conn->query($sql)) {
             $last_id = $conn->lastInsertId();
             echo "New record created successfully. Last inserted ID is: " . $last_id . "." . "<br>";
+            echo "<a href=\"javascript:history.go(-1)\">GO BACK</a>";
         } else {
             echo "Error: " . $sql . "<br>" . $conn->errorCode();
         }
@@ -33,6 +34,19 @@ class PostModel
         $sql = "SELECT * FROM posts";
 
         return $con->query($sql);
+    }
+
+    public function updatePost($id)
+    {
+
+    }
+
+    public function showPost($id)
+    {
+        $con = $this->connect();
+        $sql = "SELECT * FROM posts WHERE id = '$id'";
+        return $con->query($sql);
+
     }
 
 }
