@@ -17,7 +17,7 @@ class DbClass {
             $conn = new PDO("mysql:host=$this->serverName;dbname=$this->database", $this->userName, $this->password);
             // set the PDO error mode to exception
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            echo "Connected successfully to MySql using $this->database database through PDO interface" . "<br>";
+            //echo "Connected successfully to MySql using $this->database database through PDO interface" . "<br>";
 
             return $conn;
 

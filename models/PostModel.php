@@ -36,9 +36,23 @@ class PostModel
         return $con->query($sql);
     }
 
-    public function updatePost($id, $title, $content)
+    public function updatePost(Post $post,  $id)
     {
+        $date = $post->getDate();
+        $title = $post->getTitle();
+        $content = $post->getContent();
+        $category_id = $post->getCategoryId();
 
+        $conn = $this->connect();
+        $sql = "UPDATE posts SET date = '$date', title = '$title', content = '$content', category_id = '$category_id' WHERE id = '$id' ";
+
+        // insert data in database
+        if ($conn->query($sql)) {
+            echo "Post updated successfully " . "<br>";
+            echo "<a href=\"javascript:history.go(-1)\">GO BACK</a>";
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->errorCode();
+        }
     }
 
     public function showPost($id)

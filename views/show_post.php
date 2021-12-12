@@ -16,6 +16,7 @@
         $data = $statement->fetchAll(PDO::FETCH_ASSOC);
         echo "<h1> {$data[0]['title']}</h1>";
         echo "<p> {$data[0]['content']}</p>";
+        echo "<a href='../views/update_post.php?id={$id}'>Update post</a>";
     ?>
     <form name="delete_form" action="../controllers/blogController.php" method="post">
         <input type="hidden" name="act" value="delete_post"/>
@@ -23,7 +24,6 @@
 
         <button name="submit" type="submit" value="">Delete Post</button>
     </form>
-
 </body>
 </html>
 

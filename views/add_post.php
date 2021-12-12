@@ -5,11 +5,11 @@
     <title>Add Post</title>
 </head>
 <body>
-    <h1>Update Post</h1>
+    <h1>Add Post</h1>
     <form name="create_form" action="../controllers/blogController.php" method="post">
         <input type="hidden" name="act" value="create_post"/>
         <label>Blog Title</label><br>
-        <input type="text" name="title" value="teste"><br>
+        <input type="text" name="title" value=""><br>
         <label>Blog Content</label><br>
         <input type="text" name="content"><br>
         <label for="categories">Categories</label><br>
