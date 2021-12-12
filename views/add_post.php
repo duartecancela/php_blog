@@ -28,7 +28,7 @@
                 }
             ?>
         </select>
-        <input type="submit">
+        <button name="submit" type="submit" value="">Add Post</button>
     </form>
     <a href="..\index.php">Home</a>
 </body>

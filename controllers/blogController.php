@@ -11,7 +11,9 @@ if($_POST['act'] == 'create_post')
 
 }
 
-if($_POST['act'] == 'show_posts')
+if($_POST['act'] == 'delete_post')
 {
-    echo "<h1>All Posts</h1>";
+    $postModel = new PostModel();
+    $postModel->deletePost($_POST["id"]);
+    echo "<h1>Post Deleted id: </h1>" . "<h1> {$_POST["id"]} </h1>";
 }

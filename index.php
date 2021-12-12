@@ -13,8 +13,7 @@
         $data = $statement->fetchAll(PDO::FETCH_ASSOC);
 
         foreach ($data as $row) {
-            echo "<a href='/views/show_post.php?id={$row["id"]}'>{$row["title"]}</a>";
-            echo "<h1>" . $row["title"]. "</h1>";
+            echo "<h1><a href='views/show_post.php?id={$row["id"]}'>{$row["title"]}</a></h1>";
             echo "<p>" . $row["content"]. "</p>";
             echo "<hr>";
         }
