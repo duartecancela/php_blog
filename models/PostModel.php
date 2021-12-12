@@ -36,7 +36,7 @@ class PostModel
         return $con->query($sql);
     }
 
-    public function updatePost($id)
+    public function updatePost($id, $title, $content)
     {
 
     }
@@ -54,6 +54,7 @@ class PostModel
         $con = $this->connect();
         $sql = "DELETE FROM posts WHERE id = '$id'";
         return $con->query($sql);
+
     }
 
 }
